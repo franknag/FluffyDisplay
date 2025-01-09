@@ -29,7 +29,7 @@ jobs:
       - name: Build
         env:
           scheme: ${{ 'default' }}
-        run: cargo bundle --release
+        run: cargo bundle
       - name: Package
         run: |
           MACOS_BUILD_NAME=macos-intel
