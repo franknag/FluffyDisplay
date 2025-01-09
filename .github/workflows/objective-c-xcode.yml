@@ -12,6 +12,8 @@ jobs:
     runs-on: macos-13
 
     steps:
+      - name: Set up Xcode version
+        run: xcode-select -s /Applications/Xcode_13.1.app
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set Default Scheme
