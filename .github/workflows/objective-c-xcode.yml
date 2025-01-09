@@ -12,13 +12,9 @@ jobs:
     runs-on: macos-13
 
     steps:
-      - name: Set Default Scheme
-        run: |
-          default="/Users/runner/work/FluffyDisplay.xcodeproj"
-          echo Using default scheme: $default
       - name: Build
         env:
-          scheme: ${{ 'default' }}
+          scheme: /Users/runner/work/FluffyDisplay.xcodeproj
         run: |
           grep -i \\FluffyDisplay.xcodeproj
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
