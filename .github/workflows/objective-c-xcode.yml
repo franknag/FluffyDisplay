@@ -20,6 +20,6 @@ jobs:
         env:
           scheme: ${{ 'default' }}
         run: |
-          grep -i \\.xcodeproj\$ fi
+          grep -i \\FluffyDisplay.xcodeproj\$ fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild clean build analyze -scheme "$scheme" -"$filetype_parameter" "$file_to_build" | xcpretty && exit ${PIPESTATUS[0]}
